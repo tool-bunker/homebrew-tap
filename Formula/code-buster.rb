@@ -1,7 +1,6 @@
 class CodeBuster < Formula
   desc "Repository analysis for developers and AI coding agents"
   homepage "https://github.com/tool-bunker/code-buster"
-  version "0.2.0"
   license "MIT"
 
   if OS.mac?
