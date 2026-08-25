@@ -1,0 +1,21 @@
+name: Test formulas
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-code-buster:
+    runs-on: macos-15
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+      - name: Configure local tap
+        run: brew tap --custom-remote tool-bunker/tap "$GITHUB_WORKSPACE"
+      - name: Audit formula
+        run: brew audit --strict tool-bunker/tap/code-buster
+      - name: Install formula
+        run: brew install tool-bunker/tap/code-buster
+      - name: Test formula
+        run: brew test tool-bunker/tap/code-buster
