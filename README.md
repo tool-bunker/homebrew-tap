@@ -9,6 +9,14 @@ Homebrew formulas for command-line tools published by
 brew install tool-bunker/tap/code-buster
 ```
 
+If Homebrew requires explicit trust, review
+[`Formula/code-buster.rb`](Formula/code-buster.rb), then authorize that formula
+and repeat the installation:
+
+```sh
+brew trust --formula tool-bunker/tap/code-buster
+```
+
 Verify the installation:
 
 ```sh
