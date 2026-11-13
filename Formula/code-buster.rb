@@ -4,11 +4,11 @@ class CodeBuster < Formula
   license "MIT"
 
   if OS.mac?
-    url "https://github.com/tool-bunker/code-buster/releases/download/v0.14.3/code-buster-macos-arm64.tar.gz"
-    sha256 "40cea81c13e7b20e78913e700a51c7722f0ecacd3899ec333adb610c811a6fda"
+    url "https://github.com/tool-bunker/code-buster/releases/download/v0.14.4/code-buster-macos-arm64.tar.gz"
+    sha256 "32c8c1d98aee40168bafeea8e9f247aaa60033009dc4b1ee10a5bfab7a6f531a"
   else
-    url "https://github.com/tool-bunker/code-buster/releases/download/v0.14.3/code-buster-linux-x64.tar.gz"
-    sha256 "4c4d685bfbaa5a98c83843ba6c68510e3bef4d9a9ea8d0182174b586b5599259"
+    url "https://github.com/tool-bunker/code-buster/releases/download/v0.14.4/code-buster-linux-x64.tar.gz"
+    sha256 "f924835faa404798bd797ad0c11f9af6af32381086c6b69b1e9b5c8211a6592a"
   end
 
   depends_on arch: :arm64 if OS.mac?
@@ -19,6 +19,6 @@ class CodeBuster < Formula
   end
 
   test do
-    assert_match "cb 0.14.3", shell_output("#{bin}/cb version")
+    assert_match "cb 0.14.4", shell_output("#{bin}/cb version")
   end
 end
